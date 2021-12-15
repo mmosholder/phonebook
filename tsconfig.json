@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "ESNext",
+        "allowJs": true,
+        "checkJs": true,
+        "allowSyntheticDefaultImports": true,
+        "downlevelIteration": true,
+        "esModuleInterop": true,
+        "experimentalDecorators": true,
+        "moduleResolution": "node",
+        "typeRoots": [
+            "./node_modules/@types",
+            "./resources/js/@types",
+        ],
+        "sourceMap": true,
+        "resolveJsonModule": true,
+    },
+    "include": [
+        "./resources/js/**/*.ts",
+        "./resources/js/**/*.vue"
+    ],
+    "exclude": [
+        "./resources/js/global/App.vue"
+    ]
+}
