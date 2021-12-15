@@ -101,10 +101,12 @@ return [
     'schemas' => [
         'default' => [
             'query' => [
-                // 'example_query' => ExampleQuery::class,
+                App\GraphQL\Queries\AllContacts::class,
+                App\GraphQL\Queries\SearchContacts::class
             ],
             'mutation' => [
-                // 'example_mutation'  => ExampleMutation::class,
+                App\GraphQL\Mutations\CreateContact::class,
+                App\GraphQL\Mutations\DeleteContact::class
             ],
             'middleware' => [],
             'method' => ['get', 'post'],
@@ -121,9 +123,7 @@ return [
     // ]
     //
     'types' => [
-        // 'example'           => ExampleType::class,
-        // 'relation_example'  => ExampleRelationType::class,
-        // \Rebing\GraphQL\Support\UploadType::class,
+        'Contact' => 'App\GraphQL\Types\ContactType',
     ],
 
     // The types will be loaded on demand. Default is to load all types on each request

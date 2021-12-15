@@ -1,4 +1,7 @@
 const mix = require('laravel-mix');
+const StyleLintPlugin = require("stylelint-webpack-plugin");
+require('laravel-mix-eslint');
+
 
 /*
  |--------------------------------------------------------------------------
@@ -11,7 +14,53 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .postCss('resources/css/app.css', 'public/css', [
-        //
-    ]);
+mix.webpackConfig = ({
+    module: {
+        rules: [
+            {
+                test: /\.(graphql|gql)$/,
+                exclude: /node_modules/,
+                loader: "graphql-tag/loader"
+            }
+        ]
+    },
+    plugins: [
+        new StyleLintPlugin({
+            configFile: ".stylelintrc",
+            context: "resources/assets/scss",
+            files: [
+                // "components/*.scss",
+                // "base/*.scss",
+                // "helpers/*.scss",
+                // "utilities/*.scss",
+                "app.scss"
+            ],
+            syntax: "scss",
+            failOnError: false,
+            quiet: false,
+        })
+    ],
+    output: {
+        publicPath: "/",
+        chunkFilename: "js/[name].js"
+    }
+});
+
+mix.ts('resources/js/app.ts', 'public/js').vue({ version: 2 })
+    .eslint({
+        extensions: ['ts', 'vue'],
+        fix: true
+    })
+    .sass('resources/scss/app.scss', 'public/css').options({
+        processCssUrls: false
+    })
+// .copy("resources/vendor", "public/vendor");
+
+
+if (!mix.inProduction()) {
+    mix.sourceMaps();
+}
+
+if (mix.inProduction()) {
+    mix.version();
+}
