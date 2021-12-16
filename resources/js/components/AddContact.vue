@@ -62,9 +62,6 @@
                 :class="['contact__add__message', error ? '-error' : '']">
                 <p>{{ submissionMessage }}</p>
             </div>
-            {
-            required: true
-            }
         </card-wrapper>
     </section>
 </template>
@@ -150,7 +147,7 @@ export default Vue.extend({
             })
                 .then(() => {
                     // Set a very rudimentally success state and message, then clear it out after 5sec
-                    this.submissionMessage = '💣 Boom, contact been added to your list!';
+                    this.submissionMessage = '💣 Boom, new contact added to your list!';
                     this.submitting = false;
 
                     setTimeout(() => {

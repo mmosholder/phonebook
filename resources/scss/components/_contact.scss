@@ -2,9 +2,12 @@
     &__add {
         padding: 4vw;
         grid-area: form;
+        width: 100%;
 
         .card {
-            min-height: 35rem;
+            @include media(">=md") {
+                min-height: 35rem;
+            }
         }
 
         &__message {
@@ -31,8 +34,9 @@
         background: #141b39;
         padding: 3rem;
         box-shadow: $inset-divider-shadow;
+        width: 100%;
 
-        h2 {
+        .contact__list__title {
             @include font($size: 30px, $responsive-size: 50px, $color: $secondary, $weight: 600);
             text-align: center;
             margin-bottom: 3rem;
@@ -49,6 +53,11 @@
                 max-height: 75vh;
                 overflow-x: auto;
             }
+
+            .card__zeroState--list {
+                padding: 2rem;
+                flex-grow: 0;
+            }
         }
 
         &__wrapper {
@@ -57,6 +66,10 @@
             > section {
                 padding: 0.5rem 0;
                 border-bottom: 1px solid rgba($tertiary, 0.85);
+            }
+
+            section:last-child {
+                border-bottom: none;
             }
         }
 
@@ -81,11 +94,13 @@
             width: 3.5rem;
 
             div {
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
+                @include media(">=md") {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                }
 
                 span {
                     padding: 0.25rem;

@@ -1,16 +1,13 @@
 @mixin container {
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: 30vw 70vw;
-    grid-template-areas:
-        "form"
-        "list";
-    column-gap: 1.6rem;
+    display: flex;
+    flex-direction: column;
 
     @include media(">=md") {
+        display: grid;
         grid-template-rows: auto;
         grid-template-columns: repeat(5, 1fr);
         grid-template-areas: "form form list list list";
+        column-gap: 1.6rem;
     }
 }
 

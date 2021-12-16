@@ -8,4 +8,7 @@
         @include font($size: 20px, $responsive-size: 30px, $color: $tertiary, $weight: 600);
         margin-bottom: 3rem;
     }
+
+    &__zeroState {
+    }
 }

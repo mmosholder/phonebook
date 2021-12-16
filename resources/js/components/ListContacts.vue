@@ -1,6 +1,6 @@
 <template>
     <section class="contact__list">
-        <h2>Your Contacts</h2>
+        <h2 class="contact__list__title">Your Contacts</h2>
         <div
             v-if="allContacts.length > 0"
             class="form__group">
@@ -16,7 +16,9 @@
                 @click="searchTerm = ''">Clear Search</span>
         </div>
         <div class="contact__list__container flex">
-            <card-wrapper v-if="allContacts.length > 0">
+            <card-wrapper
+                v-if="allContacts.length > 0"
+                key="card2">
                 <div class="contact__list__wrapper">
                     <template v-for="contactGrouping in computedContacts">
                         <section
@@ -38,8 +40,27 @@
                     </template>
                 </div>
             </card-wrapper>
-            <card-wrapper v-else></card-wrapper>
+            <card-wrapper
+                v-else
+                key="card1">
+                <div class="flex align-center">
+                    <h2
+                        class="card__title">
+                        Nothing here yet. Get started by adding a friend, enemy, or frenemy as a contact.
+                    </h2>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 100 100"
+                        aria-label="hand with pencil emoji">
+                        <text
+                            y="1em"
+                            x=".2em"
+                            font-size="70">✍🏻</text>
+                    </svg>
+                </div>
+            </card-wrapper>
             <alphabet-scroll
+                v-if="allContacts.length > 0"
                 :contacts="computedContacts"
                 :active-letter="activeLetter"
                 @letterSelection="scrollToLetter"></alphabet-scroll>
