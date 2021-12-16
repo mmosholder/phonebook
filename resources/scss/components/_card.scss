@@ -1,0 +1,11 @@
+.card {
+    background-color: $white;
+    padding: 3rem;
+    border-radius: $br-card;
+    box-shadow: $card-shadow;
+
+    &__title {
+        @include font($size: 20px, $responsive-size: 30px, $color: $tertiary, $weight: 600);
+        margin-bottom: 3rem;
+    }
+}
