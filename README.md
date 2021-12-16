@@ -23,4 +23,6 @@ Now you are seeing the zero state of the app. Feel free to add a contact or seed
 
 Seeding can be done from a terminal window by running `vendor/bin/bash sail php artisan seed:contacts {your_amount}`. Please don't go wild, I didn't put in any pagination.
 
+You may notice the seeded phone numbers have a variety of delimiters and spaces and characters -- this is due to the nature of my simple implementation of Faker & seeding. The phone number input UI will not allow these characters and will only submit phone numbers in the format of (xxx) xxx-xxxx.
+
 ## Enjoy!
