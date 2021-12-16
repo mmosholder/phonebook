@@ -18,7 +18,7 @@
     },
     "include": [
         "./resources/js/**/*.ts",
-        "./resources/js/**/*.vue"
+        // "./resources/js/**/*.vue"
     ],
     "exclude": [
         "./resources/js/global/App.vue"

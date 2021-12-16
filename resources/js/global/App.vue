@@ -1,6 +1,6 @@
 <template>
-    <main>
-        <div class="marvel-device iphone-x">
+    <main class="flex container">
+        <!-- <div class="marvel-device iphone-x">
             <div class="notch">
                 <div class="camera"></div>
                 <div class="speaker"></div>
@@ -16,14 +16,16 @@
                 <div class="shadow shadow--bl"></div>
             </div>
             <div class="inner-shadow"></div>
-            <div class="screen">
-                <AddContact />
-                <ListContacts
-                    v-if="allContacts"
-                    :all-contacts="allContacts"
-                    @deleteContact="deleteContact" />
-            </div>
-        </div>
+        <div class="screen">-->
+        <AddContact
+            v-if="allContacts"
+            :has-contacts="allContacts.length > 0" />
+        <ListContacts
+            v-if="allContacts"
+            :all-contacts="allContacts"
+            @deleteContact="deleteContact" />
+        <!-- </div>
+        </div>-->
     </main>
 </template>
 

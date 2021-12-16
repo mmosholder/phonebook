@@ -1,0 +1,111 @@
+//
+// Button Classes
+// --------------------------------------------------
+
+// Reset Button
+// -------------------------
+// In an article on CSS-Tricks
+// (http://css-tricks.com/use-button-element/),
+// Chris Coyier explains that:
+// "if a button doesn’t have a meaningful
+// href, it’s a <button>"; which makes sense.
+//
+// This placeholder resets <button>'s
+// default styling, so we can use
+// <button>s where it makes without
+// worrying about the styling.
+
+@mixin button-reset {
+    cursor: pointer;
+    padding: 0;
+    background-color: transparent;
+    // Reset unusual Firefox-on-Android default style;
+    // https://github.com/necolas/normalize.css/issues/214
+    background-image: none;
+    border: 1px solid transparent;
+
+    &:active {
+        outline: 0;
+    }
+}
+
+.button {
+    @include button-reset;
+    text-align: center;
+    width: 100%;
+    display: block;
+
+    @include media(">=md") {
+        width: auto;
+        display: inline-block;
+    }
+
+    &:disabled {
+        cursor: none;
+        opacity: 0.6;
+    }
+
+    &__hollow {
+        padding: 0.8rem 1.6rem;
+        position: relative;
+        @include font($size: 14px, $weight: 500, $color: $main);
+        border: 1px solid $main;
+        background-color: rgba($main, 0);
+        transition: background-color $t-1 240ms, color $t-1 240ms;
+
+        &:focus,
+        &:hover {
+            background-color: rgba($main, 1);
+            color: $white;
+        }
+    }
+
+    &__main {
+        border: 1px solid $main;
+        display: block;
+        width: 100%;
+        padding: 0 2rem;
+        position: relative;
+        height: 5rem;
+
+        & > button {
+            @include button-reset;
+            position: absolute;
+            @include font($size: 20px, $weight: 500, $color: $white);
+            background-color: $main;
+            text-align: center;
+            width: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            transform: translateX(0) translateY(0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);
+            transition: transform $t-1 150ms;
+        }
+
+        &:hover,
+        &:focus,
+        &:focus-within {
+            & > button {
+                transform: translateX(-0.4rem) translateY(-0.4rem) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);
+            }
+        }
+    }
+}
+
+// Disabled States
+.button:disabled,
+.button__main > button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.button__main {
+    &:hover,
+    &:focus {
+        & > button:disabled {
+            transform: none;
+            opacity: 0.6;
+        }
+    }
+}

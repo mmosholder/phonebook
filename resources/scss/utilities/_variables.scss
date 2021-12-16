@@ -1,0 +1,37 @@
+// colors
+$main: #25316d;
+$secondary: #fcc812;
+$tertiary: #2e3973;
+$white: #ffffff;
+$black: #000000;
+$dark-text: #2e3e56;
+$almost-white: #efefef;
+
+// Breakpoints
+$breakpoints: (
+  xs: 320px,
+  sm: 550px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1440px,
+);
+
+// Settings
+$site-width: 1440px;
+$grid-gap: 1.6rem;
+$spacing: $grid-gap * 5.75;
+$br-card: 10px;
+$br: 4px;
+
+// CSS Variables
+:root {
+  --spacing: #{$spacing};
+}
+
+// Transitions
+//--------------------------
+$t-1: cubic-bezier(0.4, 0, 0.2, 1);
+
+// box Shadow
+$card-shadow: 0 25px 50px 0 rgba(0, 0, 0, 0.2);
+$inset-divider-shadow: inset 20px 0 17px -7px rgba(0, 0, 0, 0.33);
