@@ -11,13 +11,13 @@
     <meta property="og:type" content="website" />
     <meta property="og:title" content="PhoneBook" />
     <meta property="og:description" content="It's like a phonebook. But just for you." />
-    <meta property="og:url" content="https://phonebookdev/" />
+    <meta property="og:url" content="http://phonebookit.herokuapp.com/" />
     <meta property="og:site_name" content="PhoneBook" />
-    <meta property="og:image" content="https://phonebookdev/images/social-share.jpg" />
-    <meta property="og:image:secure_url" content="https://phonebookdev/images/social-share.jpg" />
+    <meta property="og:image" content="http://phonebookit.herokuapp.com/images/social-share.jpg" />
+    <meta property="og:image:secure_url" content="http://phonebookit.herokuapp.com/images/social-share.jpg" />
     <meta name="twitter:text:title" content="PhoneBook" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="https://phonebookdev/images/social-share.jpg" />
+    <meta name="twitter:image" content="http://phonebookit.herokuapp.com/images/social-share.jpg" />
     <meta name="twitter:image:alt" content="Blue background with a notebook emoji and PhoneBook in text">
     <!-- End Open Graph Tags -->
     
