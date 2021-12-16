@@ -1,5 +1,5 @@
 # PhonebookIt
-Welcome to PhonebookIt, a delightful webapp that let's you create and search your contacts list....and delete people from it if they've wronged you.
+Welcome to PhonebookIt, a delightful web app that let's you create and search your contacts list....and delete people from it if they've wronged you.
 
 **Requirements**
 - [Docker Desktop](https://www.docker.com/products/docker-desktop)
