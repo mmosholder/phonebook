@@ -7,10 +7,17 @@ import 'vue-tel-input/dist/vue-tel-input.css';
 
 import App from './global/App.vue';
 
-const apolloClient = new ApolloClient({
-    // You should use an absolute URL here
-    uri: 'http://localhost:3002/graphql',
-});
+let apolloClient;
+if (process.env.NODE_ENV == 'local') {
+    apolloClient = new ApolloClient({
+        uri: 'http://localhost:3002/graphql',
+    });
+}
+else if (process.env.NODE_ENV == 'production') {
+    apolloClient = new ApolloClient({
+        uri: 'http://phonebookit.herokuapp.com/graphql',
+    });
+}
 
 const apolloProvider = new VueApollo({
     defaultClient: apolloClient,
