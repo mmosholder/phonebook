@@ -17,7 +17,7 @@ Welcome to PhonebookIt, a delightful webapp that let's you create and search you
 ### Frontend
 1. Open up another terminal tab/window, cd into the repo and let's install some packages 🎉. Run `npm install` and get excited.
 2. Now, time to set up the watcher by running `npm run watch`. This will recompile any changes to the front end assets.
-3. Visit http://127.0.0.1 and see the magic
+3. Visit <a href="http://localhost:3002" target="_blank">http://localhost:3002</a> and see the magic
 
 Now you are seeing the zero state of the app. Feel free to add a contact or seed as many as you want.
 
