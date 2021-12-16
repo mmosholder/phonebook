@@ -108,14 +108,17 @@ export default Vue.extend({
     },
 
     methods: {
+        /**
+         * Takes values from even on vue-tel-input and sets the values I need.
+         */
         setPhoneNumberProperties(payload) {
             this.phoneNumberIsValid = payload.valid;
             this.phoneNumberRaw = payload.number;
         },
 
-        setValidationClasses() {
-        },
-
+        /**
+         * Submits mutation to create a new contact
+         */
         handleSubmission() {
             this.submitting = true;
 

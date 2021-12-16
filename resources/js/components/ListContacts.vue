@@ -104,6 +104,10 @@ export default Vue.extend({
     },
 
     computed: {
+        /**
+         * Decides which contacts to display based on if the user is trying to search or not.
+         * Those contacts are then formatted for displaying
+         */
         computedContacts(): Array<ContactGrouping> {
             if (this.searchTerm.length > 1) {
                 return this.sortedAndGroupedContacts(this.searchContacts);

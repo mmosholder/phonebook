@@ -1,22 +1,5 @@
 <template>
-    <main class="flex container">
-        <!-- <div class="marvel-device iphone-x">
-            <div class="notch">
-                <div class="camera"></div>
-                <div class="speaker"></div>
-            </div>
-            <div class="top-bar"></div>
-            <div class="sleep"></div>
-            <div class="bottom-bar"></div>
-            <div class="volume"></div>
-            <div class="overflow">
-                <div class="shadow shadow--tr"></div>
-                <div class="shadow shadow--tl"></div>
-                <div class="shadow shadow--br"></div>
-                <div class="shadow shadow--bl"></div>
-            </div>
-            <div class="inner-shadow"></div>
-        <div class="screen">-->
+    <main class="container">
         <AddContact
             v-if="allContacts"
             :has-contacts="allContacts.length > 0" />
@@ -24,8 +7,6 @@
             v-if="allContacts"
             :all-contacts="allContacts"
             @deleteContact="deleteContact" />
-        <!-- </div>
-        </div>-->
     </main>
 </template>
 
@@ -53,6 +34,9 @@ export default Vue.extend({
     },
 
     methods: {
+        /**
+         * Deletes a contact. Triggered from a contact inside ListContacts
+         */
         deleteContact(payload) {
             this.$apollo.mutate({
                 mutation: DELETE_CONTACT,

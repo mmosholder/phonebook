@@ -37,7 +37,7 @@ class SearchContacts extends Query
 
     public function resolve($root, $args, $context, ResolveInfo $resolveInfo, Closure $getSelectFields)
     {
-        $contacts = Contact::where('first_name', 'like', '%' . $args['search_string'] . '%')->orWhere('last_name', 'like', '%' . $args['search_string'] . '%')->orWhere('phone_number', 'like', '%' . $args['search_string'] . '%')->get();
+        $contacts = Contact::where('first_name', 'like', '%' . $args['search_string'] . '%')->orWhere('last_name', 'like', '%' . $args['search_string'] . '%')->orWhere('formatted_phone_number', 'like', '%' . $args['search_string'] . '%')->get();
 
         return $contacts;
     }
