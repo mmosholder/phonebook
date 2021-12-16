@@ -9,9 +9,16 @@ Welcome to PhonebookIt, a delightful webapp that let's you create and search you
 ### Backend
 1. Pull down this repo, cd into the repo, and run `composer install`.
 2. Duplicate `.env.example` and name `.env`
-3. Hop into your terminal (still in the repo) and run `php artisan key:generate`.
-4. The hard part is over, now, run `vendor/bin/bash sail up` to get the docker containers started. This may take a bit for the first time running.
-5. Once the docker containers are up, open up another terminal tab/window, cd into the repo, and run `vendor/bin/bash sail php artisan migrate`
+3. If you don't already have an entry for `127.0.0.1   localhost` in your hosts file, go ahead and add it now. Don't be ashamed to google how to do this, I have to look it up almost every time.
+4. Hop into your terminal (still in the repo) and run `php artisan key:generate`.
+5. The hard part is over, now, run `vendor/bin/bash sail up` to get the docker containers started. This may take a bit for the first time running.
+6. Once the docker containers are up, open up another terminal tab/window, cd into the repo, and run `vendor/bin/bash sail php artisan migrate`
 
 ### Frontend
-1. Open up another terminal tab/window, cd into the repo and let's install some packages 🎉. Run `npm install` and go grab some water or do some jumping jacks.
+1. Open up another terminal tab/window, cd into the repo and let's install some packages 🎉. Run `npm install` and get excited.
+2. Now, time to set up the watcher by running `npm run watch`. This will recompile any changes to the front end assets.
+3. Visit http://127.0.0.1 and see the magic
+
+Now you are seeing the zero state of the app. Feel free to add a contact or seed as many as you want.
+
+Seeding can be done from a terminal window by running `vendor/bin/bash sail php artisan seed:contacts {your_amount}`
