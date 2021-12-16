@@ -21,4 +21,6 @@ Welcome to PhonebookIt, a delightful webapp that let's you create and search you
 
 Now you are seeing the zero state of the app. Feel free to add a contact or seed as many as you want.
 
-Seeding can be done from a terminal window by running `vendor/bin/bash sail php artisan seed:contacts {your_amount}`
+Seeding can be done from a terminal window by running `vendor/bin/bash sail php artisan seed:contacts {your_amount}`. Please don't go wild, I didn't put in any pagination.
+
+## Enjoy!
