@@ -22,6 +22,7 @@ import {
     ContactGrouping,
 } from '../@types/index';
 
+// Gets a string made up of every letter in the alphabet vis char code numbers and splits into an array
 const alphabet = String.fromCharCode(...Array(123).keys()).slice(97).toLowerCase().split('');
 
 export default Vue.extend({

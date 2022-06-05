@@ -82,17 +82,17 @@ import CardWrapper from './CardWrapper.vue';
 import AlphabetScroll from './AlphabetScroll.vue';
 
 export default Vue.extend({
+    components: {
+        CardWrapper,
+        AlphabetScroll,
+    },
+
     props: {
         allContacts: {
             required: true,
             type: Array as () => Array<Contact>,
             default: null,
         },
-    },
-
-    components: {
-        CardWrapper,
-        AlphabetScroll,
     },
 
     data() {

@@ -149,7 +149,7 @@ export default Vue.extend({
                 },
             })
                 .then(() => {
-                    // Set a very rudimentally success state and message, then clear it out after 5sec
+                    // Set a very rudimentary success state and message, then clear it out after 5sec
                     this.submissionMessage = '💣 Boom, new contact added to your list!';
                     this.submitting = false;
 
@@ -167,7 +167,7 @@ export default Vue.extend({
 
                 })
                 .catch(e => {
-                    // Set a very rudimentally error state and message, then clear it out after 5sec
+                    // Set a very rudimentary error state and message, then clear it out after 5sec
                     this.submitting = false;
                     this.error = true;
                     this.submissionMessage = '😬 Yikes, there was an error we definitely did not prepare for.';
